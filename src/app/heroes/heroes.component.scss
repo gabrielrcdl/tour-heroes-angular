@@ -1,0 +1,10 @@
+.heroes{
+  list-style: none;
+  cursor: pointer;
+  width: 50%;
+}
+.heroes li.selected{
+  background-color: gray;
+  color: white;
+
+}
