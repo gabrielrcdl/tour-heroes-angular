@@ -13,7 +13,7 @@ import { MessageService } from '../services/message.service';
 export class HeroesComponent implements OnInit  {
 
   heroes: IHero[] = [];
-  selectedHero?: IHero;
+ // selectedHero?: IHero;
 
   constructor(
     private heroService: HeroService,
@@ -24,10 +24,10 @@ export class HeroesComponent implements OnInit  {
     this.getHeroes()
   }
 
-  onSelect(hero: IHero): void{
-    this.selectedHero = hero
-    this.messageService.add(`HeroesComponent: Selected hero id ${hero.id}`)
-  }
+  // onSelect(hero: IHero): void{
+  //   this.selectedHero = hero
+  //   this.messageService.add(`HeroesComponent: Selected hero id ${hero.id}`)
+  // }
 
   getHeroes(): void {
 

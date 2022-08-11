@@ -9,10 +9,18 @@
 
     <mat-icon>sports_martial_arts</mat-icon>
   </button>
+  <button
+  matTooltip="Dashboard"
+  routerLink="/dashboard"
+  mat-icon-button
+  aria-label="Dashboard">
+
+   <mat-icon>dashboard</mat-icon>
+ </button>
 </mat-toolbar>
 
 
-<div class="content">
+<div class="content" fxLayoutGap="12px">
   <router-outlet></router-outlet>
   <app-messages></app-messages>
 
