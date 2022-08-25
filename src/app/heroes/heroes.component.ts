@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IHero } from '../hero.model';
-import { HeroService } from '../services/hero.service';
-import { MessageService } from '../services/message.service';
+import { IHero } from '../core/models/hero.model';
+import { HeroService } from '../core/services/hero.service';
+import { MessageService } from '../core/services/message.service';
 
 
 @Component({
