@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IMenuItem } from '../../models/menu-item.model';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ToolbarComponent{
 
   @Input() title: string = ''
+  @Input() menuItems: IMenuItem[] = []
 
 
 

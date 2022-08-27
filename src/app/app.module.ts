@@ -8,6 +8,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { CoreModule } from './core/core.module';
     DashboardComponent,
   ],
   imports: [
+
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

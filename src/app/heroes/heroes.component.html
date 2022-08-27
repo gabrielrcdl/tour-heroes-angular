@@ -16,8 +16,8 @@
   <!-- Header and Row Declarations -->
   <mat-header-row *matHeaderRowDef="['id', 'name']"></mat-header-row>
   <mat-row
-    [routerLink]="['/heroes', row.id]"
     *matRowDef="let row; columns: ['id', 'name']"
+    [routerLink]="['/heroes', row.id]"
   ></mat-row>
 </mat-table>
 

@@ -1,20 +1,17 @@
 <mat-toolbar class="container-toolbar" color="primary">
   <span>{{title}}</span>
+
   <span fxFlex></span>
-  <button
-   matTooltip="Heroes"
-   routerLink="/heroes"
-   mat-icon-button
-   aria-label="Heroes list">
 
-    <mat-icon>sports_martial_arts</mat-icon>
-  </button>
   <button
-  matTooltip="Dashboard"
-  routerLink="/dashboard"
+  [matTooltip]="menuItem.toolTipText"
+  [routerLink]="menuItem.routerLink"
   mat-icon-button
-  aria-label="Dashboard">
+  *ngFor="let menuItem of menuItems"
+  aria-label="[menuItem.toolTipText]">
 
-   <mat-icon>dashboard</mat-icon>
+   <mat-icon>{{menuItem.icon}}</mat-icon>
  </button>
+
+
 </mat-toolbar>
