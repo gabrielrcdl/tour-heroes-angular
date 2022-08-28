@@ -32,6 +32,16 @@ Um tipo de classe que tem o conceito de singletons: Que são classes únicas de 
 consultar documentação rxjs: https://rxjs.dev/guide/observable
 
 
+# A evolução dos observables e o Subject:
+Como o observable tem um subscribe o valor do observable irá exatamente para quem se sub-inscreveu,
+Já no subject é um pouco diferente. Se mais de um estiver escrito no subject e esse subject mudar todos irão receber esse novo valor. Ele é um observable e observer. 
+
+# A evelução do Subject e o BehaviorSubject:
+Ele é exatamente um subject, só que conseguimos designar para eles um valor inicial
+
+OBS: Para mais infomações consultar site do RxJS
+
+
 # Operadores RXJS o coração do Angular
 Operadores são funções e existem dois tipos: 
 Pipeable Operators = operarodor de pipe
