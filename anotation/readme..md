@@ -30,3 +30,52 @@ Um tipo de classe que tem o conceito de singletons: Que são classes únicas de 
 .subscribe queremos ser notificados quando ocorrer uma mudança no observable do HeroService
 
 consultar documentação rxjs: https://rxjs.dev/guide/observable
+
+
+# Operadores RXJS o coração do Angular
+Operadores são funções e existem dois tipos: 
+Pipeable Operators = operarodor de pipe
+Creation Operators   operador de criação
+
+
+
+
+# Adicionando um proxy
+O que está sendo informado no arquivo proxy.conf.json é que se um frontend ocorrer uma chamada /api é informado um target(alvo) a ser executado.
+
+{
+  "/api":{
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+}
+
+Consultar: documentação do angular sobre proxy
+
+Após isso, deve alterar o arquivo angular.json na seção "development" adicionando o seguinte trecho:
+  "development": {
+              "browserTarget": "heroes:build:development",
+             ==> "proxyConfig": "src/proxy.conf.json"
+
+
+# Informações básicas sobre uma consulta a API REST
+
+Quando fazemos um GET:
+/heroes
+
+Quando fazemos um GET para pegar uma informação:
+/heroes:id
+
+Quando fazemos um POST:
+/heroes
+
+Quando fazemos um PUT:
+/heroes:id
+
+Quando fazemos um DELETE:
+/heroes:id
+
+
+
+
+

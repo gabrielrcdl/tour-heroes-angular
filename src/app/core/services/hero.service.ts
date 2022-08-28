@@ -1,29 +1,46 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { IHero } from '../models/hero.model';
 import { MessageService } from './message.service';
-import {HEROES} from './mock-heroes'
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeroService {
 
+  private heroesUrl = `${environment.baseUrl}/heroes`;
 
-  constructor(private messageService: MessageService) { }
+  constructor(
+    private messageService: MessageService,
+    private http: HttpClient
+  ) {}
 
-  getHeroes(): Observable<IHero[]>{
-   // of: a lista de HEROES irá virar um observable
-   const heroes = of(HEROES);
-   this.messageService.add('HeroService: fetched heroes')
-   return heroes
+
+
+  getHeroes(): Observable<IHero[]> {
+    return this.http.get<IHero[]>(this.heroesUrl).pipe(
+      tap((heroes) => this.log(`fetched ${heroes.length} hero(es)`)))
   }
 
-  getHero(id: number): Observable<IHero>{
-      // Se o hero.id da lista mocada for igual ao id que estou fornecendo
-      const hero = HEROES.find(hero => hero.id === id)!;
-      this.messageService.add(`HeroService: fetched hero = ${id}`)
-      return of (hero)
+
+  getHero(id: number): Observable<IHero> {
+    return this.http.get<IHero>(`${this.heroesUrl}/${id}`).pipe(
+      tap((hero)=> this.log(`fetched hero id: ${id} and name: ${hero.name}`) )
+    )
   }
 
+
+
+
+
+
+
+
+
+  private log(message: string): void{
+    this.messageService.add(`HeroService: ${message}`)
+  }
 }
