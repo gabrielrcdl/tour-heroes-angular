@@ -8,8 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { HeroesModule } from './heroes/heroes.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,9 +17,6 @@ import { HeroesModule } from './heroes/heroes.module';
     FormsModule,
     BrowserAnimationsModule,
 
-    // feature
-    DashboardModule,
-    HeroesModule,
 
     // app
     CoreModule,
