@@ -1,4 +1,11 @@
 .mat-row:hover {
   cursor: pointer;
-  background-color: #f5f5f5
+  background-color: #f5f5f5;
+}
+
+.add-button {
+  position: fixed;
+  right: 25px;
+  bottom: 20px;
+  z-index: 1000;
 }

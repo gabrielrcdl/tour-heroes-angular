@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   getHeroes(): void{
     // variável heroes irá colocar na propriedade this.heroes  os heroes que tá vindo do service
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes.slice(1, 6))
+    this.heroService.getAll().subscribe(heroes => this.heroes = heroes.slice(1, 6))
 
   }
 
